@@ -1,6 +1,6 @@
-package Commands;
+package cn.edu.whut.sept.zuul.Commands;
 
-import Game.AGame;
+import cn.edu.whut.sept.zuul.Game.AGame;
 
 /**
  * 此类创建一个抽象命令单词来验证命令
