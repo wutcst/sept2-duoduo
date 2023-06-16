@@ -1,15 +1,15 @@
-package Game;
+package cn.edu.whut.sept.zuul.Game;
 
 import java.util.ResourceBundle;
 import java.util.List;
 import java.util.Locale;
 
-import Commands.ACommand;
-import Commands.ACommandWords;
-import Commands.Parser;
-import Character.Player;
-import GUI.GUI;
-import ZuulInputOutput.*;
+import cn.edu.whut.sept.zuul.Commands.ACommand;
+import cn.edu.whut.sept.zuul.Commands.ACommandWords;
+import cn.edu.whut.sept.zuul.Commands.Parser;
+import cn.edu.whut.sept.zuul.Character.Player;
+import cn.edu.whut.sept.zuul.GUI.GUI;
+import cn.edu.whut.sept.zuul.ZuulInputOutput.*;
 
 /**
  * 此类创建一个抽象游戏来加载其他游戏
