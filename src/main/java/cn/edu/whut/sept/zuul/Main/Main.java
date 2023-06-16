@@ -1,6 +1,6 @@
-package Main;
+package cn.edu.whut.sept.zuul.Main;
 
-import GUI.GUI;
+import cn.edu.whut.sept.zuul.GUI.GUI;
 
 public class Main
 {
