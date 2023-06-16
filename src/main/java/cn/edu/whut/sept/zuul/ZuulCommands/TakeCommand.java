@@ -1,8 +1,8 @@
-package ZuulCommands;
+package cn.edu.whut.sept.zuul.ZuulCommands;
 
-import Game.AGame;
-import Commands.ACommand;
-import Character.Player;
+import cn.edu.whut.sept.zuul.Game.AGame;
+import cn.edu.whut.sept.zuul.Commands.ACommand;
+import cn.edu.whut.sept.zuul.Character.Player;
 
 /**
  * 此命令类是 take 命令
