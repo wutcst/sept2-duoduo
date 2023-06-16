@@ -1,8 +1,8 @@
-package ZuulCommands;
+package cn.edu.whut.sept.zuul.ZuulCommands;
 
-import Commands.ACommand;
-import Character.Player;
-import Game.AGame;
+import cn.edu.whut.sept.zuul.Commands.ACommand;
+import cn.edu.whut.sept.zuul.Character.Player;
+import cn.edu.whut.sept.zuul.Game.AGame;
 
 /**
  * 此命令类是 Drop 命令
