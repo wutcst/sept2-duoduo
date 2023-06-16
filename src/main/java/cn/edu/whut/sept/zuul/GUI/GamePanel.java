@@ -1,4 +1,4 @@
-package GUI;
+package cn.edu.whut.sept.zuul.GUI;
 
 import java.awt.Color;
 import java.awt.Container;
@@ -7,9 +7,9 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import javax.swing.JPanel;
 
-import Character.Player;
-import Commands.Parser;
-import Game.Room;
+import cn.edu.whut.sept.zuul.Character.Player;
+import cn.edu.whut.sept.zuul.Commands.Parser;
+import cn.edu.whut.sept.zuul.Game.Room;
 
 /**
  * 此类是包含游戏视图的 Jpanel 类
