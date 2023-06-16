@@ -1,4 +1,4 @@
-package Item;
+package cn.edu.whut.sept.zuul.Item;
 
 /**
  * 这个类是对Item类制定的接口
