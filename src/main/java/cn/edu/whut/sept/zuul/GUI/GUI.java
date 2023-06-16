@@ -1,11 +1,11 @@
-package GUI;
+package cn.edu.whut.sept.zuul.GUI;
 
 import java.awt.*;
 
 import javax.swing.*;
 
-import Character.Player;
-import Commands.Parser;
+import cn.edu.whut.sept.zuul.Character.Player;
+import cn.edu.whut.sept.zuul.Commands.Parser;
 
 /**
  * 此类用于创建一个包含整个 GUI 内容的 GUI
