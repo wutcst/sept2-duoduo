@@ -1,8 +1,8 @@
-package ZuulCommands;
+package cn.edu.whut.sept.zuul.ZuulCommands;
 
-import Commands.ACommand;
-import Game.AGame;
-import Character.Player;
+import cn.edu.whut.sept.zuul.Commands.ACommand;
+import cn.edu.whut.sept.zuul.Game.AGame;
+import cn.edu.whut.sept.zuul.Character.Player;
 
 /**
  * 此类是look命令
