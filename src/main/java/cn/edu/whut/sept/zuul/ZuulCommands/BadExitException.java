@@ -1,6 +1,6 @@
-package ZuulCommands;
+package cn.edu.whut.sept.zuul.ZuulCommands;
 
-import Game.Room;
+import cn.edu.whut.sept.zuul.Game.Room;
 
 /**
  * 
