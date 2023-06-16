@@ -1,10 +1,10 @@
-package Commands;
+package cn.edu.whut.sept.zuul.Commands;
 
 import java.util.MissingResourceException;
 import java.util.Scanner;
 
-import Game.AGame;
-import ZuulCommands.*;
+import cn.edu.whut.sept.zuul.Game.AGame;
+import cn.edu.whut.sept.zuul.ZuulCommands.*;
 /**
  * Parser类.
  *
