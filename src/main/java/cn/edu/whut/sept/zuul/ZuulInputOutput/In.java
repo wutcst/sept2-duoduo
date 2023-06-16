@@ -3,8 +3,8 @@ package ZuulInputOutput;
 import java.io.InputStream;
 
 /**
- * A really simple class to handle input
- * @author rej
+ *处理输入
+ * @author duoduo
  */
 public class In {
     public final InputStream in;

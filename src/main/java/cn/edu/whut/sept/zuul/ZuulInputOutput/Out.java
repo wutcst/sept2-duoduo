@@ -3,9 +3,8 @@ package ZuulInputOutput;
 import java.util.List;
 
 /**
- * A really simple class to hanndle output
  *
- * @author rej
+ * @author duoduo
  */
 public class Out {
 
@@ -17,18 +16,12 @@ public class Out {
     }
 
     /**
-     * Print a message
-     * @param str the message to print
+     *打印信息
      */
     public void print(String str) {
         System.out.print(str);
     }
 
-    /**
-     * Print a message with a carriage return
-     *
-     * @param str the message to print
-     */
     public void println(String str) {
         System.out.println(str);
     }
