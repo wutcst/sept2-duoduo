@@ -1,8 +1,8 @@
-package ZuulCommands;
+package cn.edu.whut.sept.zuul.ZuulCommands;
 
-import Commands.ACommand;
-import Character.Player;
-import Game.AGame;
+import cn.edu.whut.sept.zuul.Commands.ACommand;
+import cn.edu.whut.sept.zuul.Character.Player;
+import cn.edu.whut.sept.zuul.Game.AGame;
 
 public class BackCommand extends ACommand{
     public BackCommand(String firstWord, String secondWord, String thirdWord)
