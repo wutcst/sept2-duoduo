@@ -1,14 +1,14 @@
-package Game;
+package cn.edu.whut.sept.zuul.Game;
 
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-import Game.AGame;
-import Item.Item;
-import Character.Player;
-import ZuulCommands.BadExitException;
+import cn.edu.whut.sept.zuul.Game.AGame;
+import cn.edu.whut.sept.zuul.Item.Item;
+import cn.edu.whut.sept.zuul.Character.Player;
+import cn.edu.whut.sept.zuul.ZuulCommands.BadExitException;
 /**
  * 这个类是游戏的房间类
  * @author duoduo
