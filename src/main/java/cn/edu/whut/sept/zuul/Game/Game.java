@@ -1,11 +1,11 @@
-package Game;
+package cn.edu.whut.sept.zuul.Game;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-import Character.Player;
-import GUI.GUI;
+import cn.edu.whut.sept.zuul.Character.Player;
+import cn.edu.whut.sept.zuul.GUI.GUI;
 
 /**
  * 这个类是游戏类扩展到AGame
