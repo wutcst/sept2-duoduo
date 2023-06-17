@@ -1,6 +1,6 @@
-package Commands;
+package cn.edu.whut.sept.zuul.Commands;
 
-import Character.Player;
+import cn.edu.whut.sept.zuul.Character.Player;
 
 /**
  * 此类创建一个抽象command命令

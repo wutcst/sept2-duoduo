@@ -1,9 +1,9 @@
-package Character;
+package cn.edu.whut.sept.zuul.Character;
 
-import Item.Item;
-import Game.Room;
-import Game.AGame;
-import Game.Game;
+import cn.edu.whut.sept.zuul.Item.Item;
+import cn.edu.whut.sept.zuul.Game.Room;
+import cn.edu.whut.sept.zuul.Game.AGame;
+import cn.edu.whut.sept.zuul.Game.Game;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Objects;

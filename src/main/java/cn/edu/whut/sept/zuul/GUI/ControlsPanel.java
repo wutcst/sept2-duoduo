@@ -1,4 +1,4 @@
-package GUI;
+package cn.edu.whut.sept.zuul.GUI;
 
 import java.awt.BorderLayout;
 import java.awt.Container;
@@ -23,10 +23,10 @@ import javax.swing.ListSelectionModel;
 import javax.swing.border.Border;
 import javax.swing.border.TitledBorder;
 
-import Character.Player;
-import Commands.ACommand;
-import Commands.Parser;
-import Game.Room;
+import cn.edu.whut.sept.zuul.Character.Player;
+import cn.edu.whut.sept.zuul.Commands.ACommand;
+import cn.edu.whut.sept.zuul.Commands.Parser;
+import cn.edu.whut.sept.zuul.Game.Room;
 
 /**
  * 此类用于将控制面板打印到 GUI 中

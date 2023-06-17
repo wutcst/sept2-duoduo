@@ -1,4 +1,4 @@
-package Item;
+package cn.edu.whut.sept.zuul.Item;
 
 /**
  * This class is part of the "World of Zuul" application. 

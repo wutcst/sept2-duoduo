@@ -1,4 +1,4 @@
-package ZuulInputOutput;
+package cn.edu.whut.sept.zuul.ZuulInputOutput;
 
 import java.io.InputStream;
 

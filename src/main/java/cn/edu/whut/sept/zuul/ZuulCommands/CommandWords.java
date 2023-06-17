@@ -1,6 +1,6 @@
-package ZuulCommands;
+package cn.edu.whut.sept.zuul.ZuulCommands;
 
-import Commands.ACommandWords;
+import cn.edu.whut.sept.zuul.Commands.ACommandWords;
 
 /**
  * 此类是抽象命令单词类的实现，用于确定有效命令

@@ -2,11 +2,11 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package ZuulCommands;
+package cn.edu.whut.sept.zuul.ZuulCommands;
 
-import Commands.ACommand;
-import Game.AGame;
-import Character.Player;
+import cn.edu.whut.sept.zuul.Commands.ACommand;
+import cn.edu.whut.sept.zuul.Game.AGame;
+import cn.edu.whut.sept.zuul.Character.Player;
 
 /**
  * 此命令类是help命令

@@ -1,4 +1,4 @@
-package GUI;
+package cn.edu.whut.sept.zuul.GUI;
 
 import java.awt.Color;
 import java.awt.Container;
