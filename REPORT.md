@@ -32,3 +32,6 @@
 * Player类的设计：基于item以及room类的设计，吸收实现第一次实践内容中Game类中方法，实现go、back、take、give、tp等功能
 * Commands类的设计：包括Commands包以及ZuulCommands包，沿袭了第一次实践通过commands的实现方法，在收到GUI层面生成的Command消息后，在本层进行command分析，并向下通过Player对象调用相应方法来实现对应功能
 * GUI层的设计：界面的布置，actionlistener编写，调用CommandGUI中的方法将点击事件转换为自定义的command命令，并向下传输到command层对应的execute方法。
+
+## 类图
+![UML类图](https://github.com/wutcst/sept2-duoduo/blob/da1d4a50e125ec0c5e96b85581bb1f39cdb5ce77/UML%E7%B1%BB%E5%9B%BE.png)
