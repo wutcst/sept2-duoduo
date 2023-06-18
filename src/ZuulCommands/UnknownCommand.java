@@ -5,8 +5,8 @@ import Character.Player;
 import Game.AGame;
 
 /**
- * This command class is to crate an unknow Command
- * @author Stevosh
+ * 此命令类用于接收未知命令
+ * @author duoduo
  *
  */
 public class UnknownCommand extends ACommand
@@ -19,7 +19,7 @@ public class UnknownCommand extends ACommand
     public UnknownCommand() {}
     
     /**
-     * this method execute an unknow command
+     * 执行未知指令
      */
     @Override
     public boolean execute(Player player)

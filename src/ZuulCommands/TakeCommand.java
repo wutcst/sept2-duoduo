@@ -5,8 +5,8 @@ import Commands.ACommand;
 import Character.Player;
 
 /**
- * This command class is to the take Command
- * @author Stevosh
+ * 此命令类是 take 命令
+ * @author duoduo
  *
  */
 public class TakeCommand extends ACommand
@@ -19,14 +19,14 @@ public class TakeCommand extends ACommand
     public TakeCommand() {}
     
     /**
-     * this method execute the command
+     * take的执行方法
      */
     @Override
     public boolean execute(Player player)
     {
         if (!hasSecondWord())
         {
-            // if there is no second word, we don't know what to take...
+       
             AGame._out.println(AGame._messages.getString("takeWhat"));
             return false;
         }

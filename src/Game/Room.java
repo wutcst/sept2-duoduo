@@ -9,7 +9,11 @@ import Game.AGame;
 import Item.Item;
 import Character.Player;
 import ZuulCommands.BadExitException;
-
+/**
+ * 这个类是游戏的房间类
+ * @author duoduo
+ *
+ */
 public class Room
 {
 	// 房间描述（名称）
@@ -54,24 +58,32 @@ public class Room
         this._exits.put(direction, room);
     }
     //public Room getRoom(String direction)
-
-
+   
+    /**
+    *获取出口
+    */
     public Room getExit(String direction)
     {
     	return this._exits.get(direction);
     }
-
+   /**
+    * 获取房间描述
+    */
     public String getDescription()
     {
         return this._description;
     }
-
+    /**
+     * 设置物品名字和物品重量
+     */
     public void addItem(String name, int weight)
     {
     	Item item = new Item(name, weight);
    		this._itemsPresent.put(name, item);
     }
-    
+    /**
+     * 将物品信息加入哈希表
+     */
     public void addItem(String name, Item item)
     {
     	if (item != null)
@@ -79,22 +91,30 @@ public class Room
     		this._itemsPresent.put(name, item);
     	}
     }
-
+    /**
+     * 获取物品数量
+     */
     public int getNumberItems()
     {
     	return this._itemsPresent.size();
     }
-
+    /**
+     * 获取物品
+     */
     public Item getItem(String item)
     {
     	return this._itemsPresent.get(item);
     }
-
+    /**
+     * 哈希表中所有的物品
+     */
     public HashMap<String, Item> getAllItems()
     {
     	return this._itemsPresent;
     }
-
+    /**
+     * 移除物品
+     */
     public Item removeItem(String description)
     {
     	if (this._itemsPresent.containsKey(description))
@@ -105,38 +125,52 @@ public class Room
     		return null;
     	}
     }
-    
+    /**
+     *判断是否包含物品
+     */
     public boolean containsItem(String description)
     {
     	return this._itemsPresent.containsKey(description);
     }
-    
+    /**
+     * 添加角色
+     */
     public void addCharacter(Player character)
     {
     	this._characters.put(character.getName(), character);
     }
-
+    /**
+     * 获取角色
+     */
     public Player getCharacter(String name)
     {
     	return this._characters.get(name);
     }
-    
+    /**
+     * 移除角色
+     */
     public void removeCharacter(String name)
     {
     	if (name != null)
     		this._characters.remove(name);
     }
-    
+    /**
+     * 判断是否有角色
+     */
     public boolean hasCharacter(String character)
     {
     	return this._characters.containsKey(character);
     }
-    
+    /**
+     * 哈希表中的角色
+     */
     public HashMap<String, Player> getListCharacters()
     {
     	return this._characters;
     }
-    
+    /**
+     * 物品和角色的详细信息
+     */
     public List<String> getDetails()
     {   	
     	List<String> details = new LinkedList<>();

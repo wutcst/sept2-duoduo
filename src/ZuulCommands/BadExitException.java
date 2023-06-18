@@ -4,7 +4,7 @@ import Game.Room;
 
 /**
  * 
- * this class is for control the bad exit exception
+ * 此类用于控制错误的退出异常
  *
  */
 public class BadExitException extends Exception {

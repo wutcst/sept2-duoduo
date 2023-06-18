@@ -1,19 +1,18 @@
 package Item;
 
 /**
- * 
  * @author duoduo
  *
  */
 public class Item implements IItem
 {
-	// Name of the item
+	// 物品名称
 	private final String _name;
-	// Weight of the item
+	// 物品重量
 	private final int _itemWeight;
 	
 	/**
-	 * constructor
+	 * 构造函数
 	 * @param name
 	 * @param itemWeight
 	 */
@@ -24,7 +23,7 @@ public class Item implements IItem
 	}
 
 	/**
-	 * get the name
+	 * 获取物品名称
 	 */
 	public String getItemName()
 	{
@@ -32,7 +31,7 @@ public class Item implements IItem
 	}
 	
 	/**
-	 * get the weight
+	 * 获取物品重量
 	 */
 	public int getWeight()
 	{

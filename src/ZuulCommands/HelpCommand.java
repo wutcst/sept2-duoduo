@@ -9,8 +9,8 @@ import Game.AGame;
 import Character.Player;
 
 /**
- * This command class is to the help Command
- * @author Stevosh
+ * 此命令类是help命令
+ * @author duoduo
  *
  */
 public class HelpCommand extends ACommand
@@ -23,7 +23,7 @@ public class HelpCommand extends ACommand
     public HelpCommand() {}
     
     /**
-     * this method execute the command
+     * help的执行命令
      */
     @Override
     public boolean execute(Player player)

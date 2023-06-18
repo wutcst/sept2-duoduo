@@ -5,8 +5,8 @@ import Commands.ACommand;
 import Character.Player;
 
 /**
- * This command class is to the quit Command
- * @author Stevosh
+ *此命令类是退出命令
+ * @author duoduo
  *
  */
 public class QuitCommand extends ACommand
@@ -19,7 +19,7 @@ public class QuitCommand extends ACommand
     public QuitCommand() {}
     
     /**
-     * this method execute the command
+     * quit命令的执行命令
      */
     @Override
     public boolean execute(Player player)

@@ -5,8 +5,8 @@ import Character.Player;
 import Game.AGame;
 
 /**
- * This command class is to the Drop Command
- * @author Stevosh
+ * 此命令类是 Drop 命令
+ * @author duoduo
  *
  */
 public class DropCommand extends ACommand
@@ -20,14 +20,14 @@ public class DropCommand extends ACommand
     public DropCommand() {}
    
     /**
-     * this method execute the command
+     * 通过player去调用具体方法去执行操作
      */
     @Override
     public boolean execute(Player player)
     {
         if (!hasSecondWord())
         {
-            // if there is no second word, we don't know what to drop...
+            // 如果没有第二个词，就不知道玩家要丢弃什么物品.
             AGame._out.println(AGame._messages.getString("dropWhat"));
             return false;
         }

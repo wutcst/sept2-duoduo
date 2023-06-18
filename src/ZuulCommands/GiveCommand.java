@@ -5,8 +5,7 @@ import Commands.ACommand;
 import Game.AGame;
 
 /**
- * This command class is to the give Command
- * @author Stevosh
+ * 此命令类是给命令
  *
  */
 public class GiveCommand extends ACommand
@@ -19,7 +18,7 @@ public class GiveCommand extends ACommand
     public GiveCommand() {}
     
     /**
-     * this method execute the command
+     * 给命令的执行命令，通过player去调用具体的方法
      */
     @Override
     public boolean execute(Player player)

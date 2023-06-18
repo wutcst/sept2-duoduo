@@ -29,12 +29,13 @@ public abstract class AGame
 	
 	/**
 	 * 构造函数
-
+	 * @param language
+	 * @param country
 	 * @param commands
 	 */
-	public AGame(ACommandWords commands)
+	public AGame( ACommandWords commands)
 	{
-
+		
 		AGame._messages = ResourceBundle.getBundle("ZuulCommands.MessagesBundle");
 		AGame._commands = commands;
 		this._parser = new Parser("ZuulCommands");
@@ -59,7 +60,7 @@ public abstract class AGame
 	}
 	
 	/**
-	 *
+	 *欢迎
 	 */
 	private void printWelcome()
 	{

@@ -1,8 +1,8 @@
 package Item;
 
 /**
- * This class is an interface to make a plan for the Item class
- * @author Stevosh
+ * 这个类是对Item类制定的接口
+ * @author duoduo
  *
  */
 public interface IItem

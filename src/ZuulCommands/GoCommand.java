@@ -5,8 +5,8 @@ import Game.AGame;
 import Character.Player;
 
 /**
- * This command class is to the go Command
- * @author Stevosh
+ * 此命令类是 go 命令
+ * @author duoduo
  *
  */
 public class GoCommand extends ACommand
@@ -19,7 +19,7 @@ public class GoCommand extends ACommand
     public GoCommand() {}
     
     /**
-     * this method execute the command
+     * go的执行命令，通过player去调用具体方法
      */
     @Override
     public boolean execute(Player player)

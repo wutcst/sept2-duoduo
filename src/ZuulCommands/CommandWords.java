@@ -3,14 +3,13 @@ package ZuulCommands;
 import Commands.ACommandWords;
 
 /**
- * this class is an implementation of the Abstract Command words class
- * to determinate the valid commands
- * @author Stevosh
+ * 此类是抽象命令单词类的实现，用于确定有效命令
+ * @author duoduo
  *
  */
 public class CommandWords extends ACommandWords
 {
-    // a constant array that holds all valid command words
+    // 保存所有有效命令字的常量数组
     private static final String[] validCommands = 
     	{
         	"go",
@@ -24,7 +23,7 @@ public class CommandWords extends ACommandWords
         };
 
     /**
-     * Constructor
+     *构造函数
      */
     public CommandWords() {}
     

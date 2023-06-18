@@ -10,8 +10,8 @@ import java.util.Objects;
 import java.util.Random;
 
 /**
- * This class is part of the "World of Zuul" application. 
- * "World of Zuul" is a very simple, text based adventure game.  
+ * 此个类是“World of Zuul”应用程序的一部分。
+ * "World of Zuul"是一款非常简单的基于文本的冒险游戏。
  * 
  * 玩家就是角色。它继承自字符接口。
  * Player类.
@@ -22,18 +22,19 @@ import java.util.Random;
  */
 public class Player implements Character
 {
-	private String _name;  // name of the player
-	private Room _currentRoom; // current room where the player is
-	private String _lastdirection;
-	private int _totalWeight; // weight total of items can wear
+	private String _name;  // 玩家名字
+	private Room _currentRoom; // 玩家所在的当前房间
+	private String _lastdirection;//上一个房间
+	private int _totalWeight; // 总重量
 	private static int _MAX_WEIGHT = 10;
-	private HashMap<String, Item> _itemsInventory;
+	private HashMap<String, Item> _itemsInventory;//物品仓库
 	
 	/**
 	 * Constructor
 	 * @param name
 	 * @param startRoom
 	 */
+	//玩家基本信息
 	public Player(String name, Room startRoom)
 	{
 		this._name = name;
@@ -43,7 +44,7 @@ public class Player implements Character
 	}
 	   
 	/**
-	 * set the name
+	 * 设置名字
 	 */
 	@Override
 	public void setName(String name)
@@ -52,7 +53,7 @@ public class Player implements Character
 	}
 
 	/**
-	 * get the name
+	 * 得到名字
 	 */
 	@Override
 	public String getName()
@@ -61,7 +62,7 @@ public class Player implements Character
 	}
 	
 	/**
-	 * set the current room
+	 * 设置当前房间
 	 */
 	@Override
 	public void setCurrentRoom(Room currentRoom)
@@ -70,17 +71,22 @@ public class Player implements Character
 	}
 
 	/**
-	 * get the current room
+	 * 得到当前房间
 	 */
 	@Override
-	public Room getCurrentRoom()
+	public Room getCurrentRoom()//room类型
 	{
 		return this._currentRoom;
 	}
-	public String get_lastdirection()	{return this._lastdirection;}
+	
+	//得到上一个方向
+	public String get_lastdirection()
+	{
+		return this._lastdirection;
+		}
 
 	/**
-	 * get details
+	 * 得到详细信息
 	 */
 	@Override
 	public List<String> getDetails()
@@ -89,14 +95,14 @@ public class Player implements Character
 	}
 
 	/**
-	 * get a item
+	 * 得到仓库的物品
 	 */
 	@Override
 	public Item getItemInventory(String item)
 	{
 		return _itemsInventory.get(item);
 	}
-
+    //得到仓库大小
 	@Override
 	public int getInventorySize()
 	{
@@ -104,7 +110,7 @@ public class Player implements Character
 	}
 
 	/**
-	 * get inventory
+	 * 得到仓库
 	 */
 	@Override
 	public HashMap<String, Item> getInventory()
@@ -113,7 +119,7 @@ public class Player implements Character
 	}
 	
 	/**
-	 * 检查是否存在item
+	 * 检查是否存在物品item
 	 * @param desc
 	 * @return
 	 */
@@ -133,7 +139,7 @@ public class Player implements Character
 	}
 
 	/**
-	 * add an item
+	 * 添加物品
 	 */
 	@Override
 	public void addItem(Item item)
@@ -142,7 +148,7 @@ public class Player implements Character
 	}
 	
 	/**
-	 * 关键词命令 take
+	 * take命令实现
 	 * @param desc
 	 */
     public void take(String desc)
@@ -160,11 +166,12 @@ public class Player implements Character
         }
         item = getCurrentRoom().removeItem(desc);
         this._itemsInventory.put(desc, item);
+        
         this._totalWeight += item.getWeight();
     }
 	
 	/**
-	 * 命令关键词 drop
+	 * drop命令实现
 	 * @param name
 	 */
 	@Override
@@ -181,7 +188,7 @@ public class Player implements Character
 	}
 	
 	/**
-	 * 命令关键词给予 give
+	 * give命令实现
 	 * @param desc
 	 */
 	@Override
@@ -207,13 +214,14 @@ public class Player implements Character
         this._currentRoom.getCharacter(character).addItem(item);        
     }
 	/**
-	 * 命令关键词 look
+	 * look命令实现
 	 */
 	public void look()
 	{
 		for (String str : getCurrentRoom().getDetails())
 			AGame._out.println(str);
 	}
+	//back命令实现
 	public void back(){
 		String newdirection = null;
 		switch (_lastdirection){
@@ -231,7 +239,7 @@ public class Player implements Character
 	}
 	
 	/**
-	 * 命令给关键词 go room
+	 * go room实现
 	 * @param direction
 	 */
     public void goRoom(String direction)
@@ -269,7 +277,7 @@ public class Player implements Character
 
 	
     /**
-     * set the total weight
+     * 设置总重量
      */
 	public void setTotalWeight(int totalWeight)
 	{
@@ -277,7 +285,7 @@ public class Player implements Character
 	}
 
 	/**
-	 * get the total weight
+	 * 得到总重量
 	 */
 	public int getTotalWeight()
 	{
@@ -285,7 +293,7 @@ public class Player implements Character
 	}
 	
 	/**
-	 * get the maw weight
+	 * 得到最大总量
 	 */
 	public int getMaxWeight()
 	{

@@ -5,8 +5,8 @@ import Game.AGame;
 import Character.Player;
 
 /**
- * This command class is to the look Command
- * @author Stevosh
+ * 此类是look命令
+ * @author duoduo
  *
  */
 public class LookCommand extends ACommand
@@ -19,7 +19,7 @@ public class LookCommand extends ACommand
     public LookCommand() {}
     
     /**
-     * this method execute the command
+     *look的执行方法，通过player调用具体指令
      */
     @Override
     public boolean execute(Player player)

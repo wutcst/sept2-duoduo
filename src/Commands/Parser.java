@@ -6,9 +6,6 @@ import java.util.Scanner;
 import Game.AGame;
 import ZuulCommands.*;
 /**
- * This class is part of the "World of Zuul" application.
- * "World of Zuul" is a very simple, text based adventure game.
- *
  * Parser类.
  *
  * @author duoduo
