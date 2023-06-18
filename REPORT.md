@@ -35,3 +35,6 @@
 
 ## 类图
 ![UML类图](https://github.com/wutcst/sept2-duoduo/blob/da1d4a50e125ec0c5e96b85581bb1f39cdb5ce77/UML%E7%B1%BB%E5%9B%BE.png)
+
+## 类的说明
+
