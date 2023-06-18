@@ -1,12 +1,6 @@
 package Item;
 
 /**
- * This class is part of the "World of Zuul" application. 
- * "World of Zuul" is a very simple, text based adventure game.  
- * 
- * This class hold an enumeration of all items in the game.
- * It is used to create some items with  ...
- * 
  * @author duoduo
  *
  */
