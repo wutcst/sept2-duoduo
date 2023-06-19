@@ -90,7 +90,7 @@ public abstract class AGame
 	}
 	
 	/**
-	 *
+	 *获取玩家对象
 	 * @return
 	 */
 	protected Player getPlayer()
