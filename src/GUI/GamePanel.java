@@ -88,7 +88,7 @@ public class GamePanel extends JPanel
 		if (this._player.getCurrentRoom().getListCharacters().size() > 0)
 		{
 			loader.loadImage("gandalf.png");
-			g2.drawImage(loader.getImage(), 416 / 2 - 22, 572 / 2 - 140, 75,85,null);
+			g2.drawImage(loader.getImage(), 416 / 2 - 32, 572 / 2 - 140, 75,85,null);
 		}
 		//如果有物品粘贴宝箱图片
 		if (this._player.getCurrentRoom().getAllItems().size() > 0)
