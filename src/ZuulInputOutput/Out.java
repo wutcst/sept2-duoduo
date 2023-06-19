@@ -3,9 +3,9 @@ package ZuulInputOutput;
 import java.util.List;
 
 /**
- * A really simple class to hanndle output
+ * 一个非常简单的类来实现输出功能
  *
- * @author rej
+ * @author duoduo
  */
 public class Out {
 
@@ -17,7 +17,7 @@ public class Out {
     }
 
     /**
-     * Print a message
+     * 输出一个数据消息
      * @param str the message to print
      */
     public void print(String str) {
@@ -25,7 +25,7 @@ public class Out {
     }
 
     /**
-     * Print a message with a carriage return
+     * 打印带有回车的消息
      *
      * @param str the message to print
      */
