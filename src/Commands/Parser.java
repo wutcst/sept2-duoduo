@@ -85,7 +85,9 @@ public class Parser
             return new UnknownCommand(word1, word2, word3); 
         }
     }
-    
+    /**
+    * 获取GUI层面的命令
+    */
     public ACommand getCommandGUI(String str)
     {
         String inputLine;   // will hold the full input line
@@ -122,9 +124,11 @@ public class Parser
             String cmdString = this._MYPACKAGE + word1.substring(0, 1).toUpperCase() + word1.substring(1) + "Command";
             try
             {
-                ACommand cmd = (ACommand) Class.forName(cmdString).newInstance();
+                ACommand cmd = (ACommand) Class.forName(cmdString).newInstance();//通过 Class 类的 newInstance() 方法创建对象
                 cmd.addWords(word1, word2, word3);
-                //Could use the Constructor class but this is easier
+                /*使用Class类的中forName ()方法获得与字符串相应的Class对象 ，
+                动态加载和创建Class 对象，根据用户输入的字符串来创建对象
+                */
                 return cmd;
             }
             catch (ClassNotFoundException
