@@ -152,22 +152,22 @@ public class Player implements Character
 	 * @param desc
 	 */
     public void take(String desc)
-    {
+    {//如果转递的物品不在当前房间
         if (!getCurrentRoom().containsItem(desc))
         {
             AGame._out.println(desc + " " + AGame._messages.getString("room"));
             return;
         }
         Item item = getCurrentRoom().getItem(desc);
-        if (tooHeavy(item))
+        if (tooHeavy(item))/如果转递的物品超重
         {
             AGame._out.println(desc + " " + AGame._messages.getString("heavy"));
             return;
         }
         item = getCurrentRoom().removeItem(desc);
-        this._itemsInventory.put(desc, item);
+        this._itemsInventory.put(desc, item);//物品仓库加入该物品
         
-        this._totalWeight += item.getWeight();
+        this._totalWeight += item.getWeight();//总重累加
     }
 	
 	/**
@@ -177,14 +177,14 @@ public class Player implements Character
 	@Override
 	public void dropItem(String name)
 	{
-		if (!hasItem(name))
+		if (!hasItem(name))//如果没有这个物品
 		{
 			AGame._out.println(AGame._messages.getString("dontHave") + " " + name);
             return;
 		}
-        Item item = this._itemsInventory.remove(name);
-        this._totalWeight -= item.getWeight();
-        this._currentRoom.addItem(name, item);
+        Item item = this._itemsInventory.remove(name);//物品仓库移除该物品
+        this._totalWeight -= item.getWeight();//总重累加
+        this._currentRoom.addItem(name, item);//当前房间增加该物品
 	}
 	
 	/**
@@ -193,25 +193,25 @@ public class Player implements Character
 	 */
 	@Override
     public void giveItem(String desc, String character)
-	{
+	{//如果当前房间没有该人物
         if (!this._currentRoom.hasCharacter(character))
         {
             AGame._out.println(character + " " + AGame._messages.getString("room"));
             return;
-        }
+        }//如果物品仓库没有包含该物品
         if (!this._itemsInventory.containsKey(desc))
         {
             AGame._out.println(AGame._messages.getString("room") + " " + desc);
             return;
-        }
+        }//如果当前人物得到的物品重量加上仓库得到的重量大于人物得到物品的最大总重量
         if (this._currentRoom.getCharacter(character).getTotalWeight() + this._itemsInventory.get(desc).getWeight() > this._currentRoom.getCharacter(character).getMaxWeight())
         {
         	AGame._out.println(character + " " + AGame._messages.getString("heavy") + " " + desc);
             return;
         }
         Item item = this._itemsInventory.remove(desc);
-        this._totalWeight -= item.getWeight();
-        this._currentRoom.getCharacter(character).addItem(item);        
+        this._totalWeight -= item.getWeight();//总重累减
+        this._currentRoom.getCharacter(character).addItem(item); //当前房间增加该物品       
     }
 	/**
 	 * look命令实现
