@@ -7,7 +7,7 @@ package Item;
  */
 public interface IItem
 {
-	public String getItemName();
-    public int getWeight();
-    public void print();
+	public String getItemName();//返回物品的名称。实现类应该提供这个方法来获取物品的名称。
+    public int getWeight();//返回物品的重量。实现类应该提供这个方法来获取物品的重量。
+    public void print();//打印物品的信息。实现类应该提供这个方法来自定义物品信息的打印方式。
 }
