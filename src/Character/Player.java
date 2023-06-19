@@ -34,8 +34,8 @@ public class Player implements Character//实现接口的功能
 	 * @param name
 	 * @param startRoom
 	 */
-	//玩家基本信息
-	public Player(String name, Room startRoom)
+	
+	public Player(String name, Room startRoom)//生成玩家基本信息
 	{
 		this._name = name;
 		this._currentRoom = startRoom;
@@ -221,9 +221,12 @@ public class Player implements Character//实现接口的功能
 		for (String str : getCurrentRoom().getDetails())//循环输出该房间的信息
 			AGame._out.println(str);
 	}
-	//back命令实现
+	
+	/**
+	 * back命令实现
+	 */
 	public void back(){
-		String newdirection = null;
+		String newdirection = null;//新的方向置为空
 		switch (_lastdirection){
 			case "west":newdirection="east";break;//西变东
 			case "east":newdirection="west";break;//东变西
