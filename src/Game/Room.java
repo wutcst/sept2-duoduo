@@ -16,15 +16,15 @@ import ZuulCommands.BadExitException;
  */
 public class Room
 {
-	// 房间描述（名称）
+    // 房间描述（名称）
     final public String _description;
-    // 从房间出口
+    // 房间出口
     final private Map<String, Room> _exits;
     // 房间内物品的地图
     private HashMap<String, Item> _itemsPresent;
     // 人物地图
     final private HashMap<String, Player> _characters;
-
+    //构造新的哈希表来储存房间里的物品和角色
     public Room(String description) 
     {
         this._description = description;
@@ -32,7 +32,7 @@ public class Room
         this._characters = new HashMap<>();
         this._exits = new HashMap<>();
     }
-     //设置出口
+     //设置四个方向的出口
     public void setExits(Room north, Room east, Room south, Room west) 
     {
         try
@@ -42,13 +42,13 @@ public class Room
     	    setExit(AGame._messages.getString("south"), south);
     	    setExit(AGame._messages.getString("west"), west);
     	}
-        catch (BadExitException e)
+        catch (BadExitException e)//错误则转向ZuulCommand类中的控制错误的异常退出类
         {
     	    e.printStackTrace();
     	    System.exit(1);
     	}
     }
-    
+    //通过BadExitException来实现
     public void setExit(String direction, Room room) throws BadExitException
     {
     	if (room == null)
@@ -67,7 +67,7 @@ public class Room
     	return this._exits.get(direction);
     }
    /**
-    * 获取房间描述
+    * 获取房间的描述
     */
     public String getDescription()
     {
@@ -82,7 +82,7 @@ public class Room
    		this._itemsPresent.put(name, item);
     }
     /**
-     * 将物品信息加入哈希表
+     * 将物品信息加入哈希表中
      */
     public void addItem(String name, Item item)
     {
@@ -92,7 +92,7 @@ public class Room
     	}
     }
     /**
-     * 获取物品数量
+     * 获取物品的数量
      */
     public int getNumberItems()
     {
@@ -113,7 +113,7 @@ public class Room
     	return this._itemsPresent;
     }
     /**
-     * 移除物品
+     * 从哈希表中移除物品
      */
     public Item removeItem(String description)
     {
@@ -140,7 +140,7 @@ public class Room
     	this._characters.put(character.getName(), character);
     }
     /**
-     * 获取角色
+     * 获取角色信息
      */
     public Player getCharacter(String name)
     {
