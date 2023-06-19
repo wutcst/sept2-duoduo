@@ -1,7 +1,8 @@
 package Item;
 
 /**
- * @author duoduo
+ * Item类用于例举出在游戏中所有的物品
+ *  @author duoduo
  *
  */
 public class Item implements IItem
