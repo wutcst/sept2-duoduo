@@ -218,7 +218,7 @@ public class Player implements Character//实现接口的功能
 	 */
 	public void look()
 	{
-		for (String str : getCurrentRoom().getDetails())//输出该房间的信息
+		for (String str : getCurrentRoom().getDetails())//循环输出该房间的信息
 			AGame._out.println(str);
 	}
 	//back命令实现
@@ -251,14 +251,14 @@ public class Player implements Character//实现接口的功能
             AGame._out.println(AGame._messages.getString("door"));//输出下一个门不存在
         }
         else{
-            setCurrentRoom(nextRoom);
+            setCurrentRoom(nextRoom);//当前房间变为下一房间
 			_lastdirection=direction;
             look();
             //如果得到的当前房间的描述符合TProom
 			if(Objects.equals(getCurrentRoom().getDescription(), "TProom and you will tp to a random room")){
 
 				String destination = null;
-				Random ran1=new Random();
+				Random ran1=new Random();//随机生成
 				int count=ran1.nextInt(4);
 				switch(count){
 					case 0:destination="east";break;//0的话反向是东
