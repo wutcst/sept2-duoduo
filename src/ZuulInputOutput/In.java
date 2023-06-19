@@ -3,7 +3,7 @@ package ZuulInputOutput;
 import java.io.InputStream;
 
 /**
- * A really simple class to handle input
+ * 一个非常简单的类来实现输入
  * @author rej
  */
 public class In {
