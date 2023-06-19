@@ -159,7 +159,7 @@ public class Player implements Character
             return;
         }
         Item item = getCurrentRoom().getItem(desc);
-        if (tooHeavy(item))/如果转递的物品超重
+        if (tooHeavy(item))//如果转递的物品超重
         {
             AGame._out.println(desc + " " + AGame._messages.getString("heavy"));
             return;
