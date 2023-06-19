@@ -30,7 +30,7 @@ public class Game extends AGame
         Room cafe, garden, store, restaurant, toilet,TProom;
         this._rooms = new ArrayList<>();
 
-        // 创建房间
+        // 创建房间，房间共11个
         outside = new Room(Game._messages.getString("outside"));
         this._rooms.add(outside);
         theatre = new Room(Game._messages.getString("lecture"));
@@ -54,7 +54,7 @@ public class Game extends AGame
         TProom = new Room(Game._messages.getString("TProom"));
         this._rooms.add(TProom);
        
-        // 房间链接关系以及物品表（包含物品名称和物品重量）
+        // 设计一个游戏地图并且以该地图来构建房间链接关系以及在房间里放置对应的物品（包含物品名称和物品重量）
         outside.setExits(garden, theatre, lab, pub);
         outside.addItem(Game._messages.getString("notebook"), 2);
         theatre.setExits(TProom, cafe, null, outside);
@@ -79,7 +79,7 @@ public class Game extends AGame
         toilet.setExits(restaurant, store, null, null);
         toilet.addItem(Game._messages.getString("paper"), 1);
         TProom.setExits(pub,office,store,cafe);
-
+        //设置出现在房间里的角色信息
         lab.addCharacter(new Player(Game._messages.getString("Gandalf"), lab));
         pub.addCharacter(new Player(Game._messages.getString("Aragorn"), pub));
         toilet.addCharacter(new Player(Game._messages.getString("Legolas"), toilet));
