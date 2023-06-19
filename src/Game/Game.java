@@ -54,7 +54,7 @@ public class Game extends AGame
         TProom = new Room(Game._messages.getString("TProom"));
         this._rooms.add(TProom);
        
-        // 房间链接关系以及物品表
+        // 房间链接关系以及物品表（包含物品名称和物品重量）
         outside.setExits(garden, theatre, lab, pub);
         outside.addItem(Game._messages.getString("notebook"), 2);
         theatre.setExits(TProom, cafe, null, outside);

@@ -29,8 +29,6 @@ public abstract class AGame
 	
 	/**
 	 * 构造函数
-	 * @param language
-	 * @param country
 	 * @param commands
 	 */
 	public AGame( ACommandWords commands)
@@ -96,7 +94,7 @@ public abstract class AGame
 	}
 	
 	/**
-	 * set rooms
+	 * 把房间加入游戏中
 	 * @param rooms
 	 */
 	protected void setRooms(List<Room> rooms)

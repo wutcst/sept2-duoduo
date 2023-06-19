@@ -20,7 +20,7 @@ import java.util.Random;
  * @author duoduo
  *
  */
-public class Player implements Character
+public class Player implements Character//实现接口的功能
 {
 	private String _name;  // 玩家名字
 	private Room _currentRoom; // 玩家所在的当前房间
@@ -40,7 +40,7 @@ public class Player implements Character
 		this._name = name;
 		this._currentRoom = startRoom;
 		this._totalWeight = 0;
-		this._itemsInventory = new HashMap<>();
+		this._itemsInventory = new HashMap<>();//创建哈希表存贮仓库这个变量
 	}
 	   
 	/**
@@ -49,7 +49,7 @@ public class Player implements Character
 	@Override
 	public void setName(String name)
 	{
-		this._name = name;
+		this._name = name;//转递name这个变量
 	}
 
 	/**
@@ -58,7 +58,7 @@ public class Player implements Character
 	@Override
 	public String getName()
 	{
-		return this._name;
+		return this._name;//返回name
 	}
 	
 	/**
@@ -67,7 +67,7 @@ public class Player implements Character
 	@Override
 	public void setCurrentRoom(Room currentRoom)
 	{
-		this._currentRoom = currentRoom;
+		this._currentRoom = currentRoom;//转递当前房间变量
 	}
 
 	/**
@@ -76,13 +76,13 @@ public class Player implements Character
 	@Override
 	public Room getCurrentRoom()//room类型
 	{
-		return this._currentRoom;
+		return this._currentRoom;//返回当前房间变量
 	}
 	
 	//得到上一个方向
 	public String get_lastdirection()
 	{
-		return this._lastdirection;
+		return this._lastdirection;//返回上一个方向
 		}
 
 	/**
@@ -91,7 +91,7 @@ public class Player implements Character
 	@Override
 	public List<String> getDetails()
 	{
-		return getCurrentRoom().getDetails();
+		return getCurrentRoom().getDetails();//返回得到当前房间的得到的信息
 	}
 
 	/**
@@ -100,13 +100,13 @@ public class Player implements Character
 	@Override
 	public Item getItemInventory(String item)
 	{
-		return _itemsInventory.get(item);
+		return _itemsInventory.get(item);//返回得到仓库物品
 	}
     //得到仓库大小
 	@Override
 	public int getInventorySize()
 	{
-		return this._itemsInventory.size();
+		return this._itemsInventory.size();//返回物品仓库大小
 	}
 
 	/**
@@ -115,7 +115,7 @@ public class Player implements Character
 	@Override
 	public HashMap<String, Item> getInventory()
 	{
-		return this._itemsInventory;
+		return this._itemsInventory;//返回物品仓库
 	}
 	
 	/**
@@ -123,7 +123,7 @@ public class Player implements Character
 	 * @param desc
 	 * @return
 	 */
-	public boolean hasItem(String desc)
+	public boolean hasItem(String desc)//判断仓库里是否有这个物品
 	{
 		return this._itemsInventory.containsKey(desc);
 	}
@@ -133,7 +133,7 @@ public class Player implements Character
 	 * @param item
 	 * @return
 	 */
-	public boolean tooHeavy(Item item)
+	public boolean tooHeavy(Item item)//判断物品是否超重
 	{
 		return (item.getWeight() + this._totalWeight > getMaxWeight());
 	}
@@ -144,95 +144,95 @@ public class Player implements Character
 	@Override
 	public void addItem(Item item)
 	{
-		this._itemsInventory.put(item.getItemName(), item);
+		this._itemsInventory.put(item.getItemName(), item);//添加物品到当前物品仓库
 	}
 	
 	/**
 	 * take命令实现
 	 * @param desc
 	 */
-    public void take(String desc)
-    {
-        if (!getCurrentRoom().containsItem(desc))
-        {
-            AGame._out.println(desc + " " + AGame._messages.getString("room"));
-            return;
-        }
-        Item item = getCurrentRoom().getItem(desc);
-        if (tooHeavy(item))
-        {
-            AGame._out.println(desc + " " + AGame._messages.getString("heavy"));
-            return;
-        }
-        item = getCurrentRoom().removeItem(desc);
-        this._itemsInventory.put(desc, item);
-        
-        this._totalWeight += item.getWeight();
-    }
+	 public void take(String desc)
+	    {//如果转递的物品不在当前房间
+	        if (!getCurrentRoom().containsItem(desc))
+	        {
+	            AGame._out.println(desc + " " + AGame._messages.getString("room"));//显示该物品不在房间
+	            return;
+	        }
+	        Item item = getCurrentRoom().getItem(desc);//实例化让item指向当前房间得到的物品
+	        if (tooHeavy(item))//如果转递的物品超重
+	        {
+	            AGame._out.println(desc + " " + AGame._messages.getString("heavy"));//显示该物品超重量
+	            return;
+	        }
+	        item = getCurrentRoom().removeItem(desc);
+	        this._itemsInventory.put(desc, item);//物品仓库加入该物品
+	        
+	        this._totalWeight += item.getWeight();//总重累加
+	    }
 	
-	/**
-	 * drop命令实现
-	 * @param name
-	 */
-	@Override
-	public void dropItem(String name)
-	{
-		if (!hasItem(name))
+	 /**
+		 * drop命令实现
+		 * @param name
+		 */
+		@Override
+		public void dropItem(String name)
 		{
-			AGame._out.println(AGame._messages.getString("dontHave") + " " + name);
-            return;
+			if (!hasItem(name))//如果没有这个物品
+			{
+				AGame._out.println(AGame._messages.getString("dontHave") + " " + name);//显示没有这个物品
+	            return;
+			}
+	        Item item = this._itemsInventory.remove(name);//物品仓库移除该物品
+	        this._totalWeight -= item.getWeight();//总重累加
+	        this._currentRoom.addItem(name, item);//当前房间增加该物品
 		}
-        Item item = this._itemsInventory.remove(name);
-        this._totalWeight -= item.getWeight();
-        this._currentRoom.addItem(name, item);
-	}
-	
-	/**
-	 * give命令实现
-	 * @param desc
-	 */
-	@Override
-    public void giveItem(String desc, String character)
-	{
-        if (!this._currentRoom.hasCharacter(character))
-        {
-            AGame._out.println(character + " " + AGame._messages.getString("room"));
-            return;
-        }
-        if (!this._itemsInventory.containsKey(desc))
-        {
-            AGame._out.println(AGame._messages.getString("room") + " " + desc);
-            return;
-        }
-        if (this._currentRoom.getCharacter(character).getTotalWeight() + this._itemsInventory.get(desc).getWeight() > this._currentRoom.getCharacter(character).getMaxWeight())
-        {
-        	AGame._out.println(character + " " + AGame._messages.getString("heavy") + " " + desc);
-            return;
-        }
-        Item item = this._itemsInventory.remove(desc);
-        this._totalWeight -= item.getWeight();
-        this._currentRoom.getCharacter(character).addItem(item);        
-    }
+		
+		/**
+		 * give命令实现
+		 * @param desc
+		 */
+		@Override
+	    public void giveItem(String desc, String character)
+		{//如果当前房间没有该人物
+	        if (!this._currentRoom.hasCharacter(character))
+	        {
+	            AGame._out.println(character + " " + AGame._messages.getString("room"));//显示该人物不在该房间
+	            return;
+	        }//如果物品仓库没有包含该物品
+	        if (!this._itemsInventory.containsKey(desc))
+	        {
+	            AGame._out.println(AGame._messages.getString("room") + " " + desc);//显示该物品不在该房间
+	            return;
+	        }//如果当前人物得到的物品重量加上仓库得到的重量大于人物得到物品的最大总重量
+	        if (this._currentRoom.getCharacter(character).getTotalWeight() + this._itemsInventory.get(desc).getWeight() > this._currentRoom.getCharacter(character).getMaxWeight())
+	        {
+	        	AGame._out.println(character + " " + AGame._messages.getString("heavy") + " " + desc);//显示该人物得到的物品超重
+	            return;
+	        }
+	        Item item = this._itemsInventory.remove(desc);
+	        this._totalWeight -= item.getWeight();//总重累减
+	        this._currentRoom.getCharacter(character).addItem(item); //当前房间增加该物品       
+	    }
 	/**
 	 * look命令实现
 	 */
 	public void look()
 	{
-		for (String str : getCurrentRoom().getDetails())
+		for (String str : getCurrentRoom().getDetails())//输出该房间的信息
 			AGame._out.println(str);
 	}
 	//back命令实现
 	public void back(){
 		String newdirection = null;
 		switch (_lastdirection){
-			case "west":newdirection="east";break;
-			case "east":newdirection="west";break;
-			case "south":newdirection="north";break;
-			case "north":newdirection="south";break;
+			case "west":newdirection="east";break;//西变东
+			case "east":newdirection="west";break;//东变西
+			case "south":newdirection="north";break;//南变北
+			case "north":newdirection="south";break;//北变南
 
 		}
 		Room Backroom=getCurrentRoom().getExit(newdirection);
-		setCurrentRoom(Backroom);
+		setCurrentRoom(Backroom);//调用方法转递backroom变量
 		_lastdirection=null;
 		look();
 
@@ -244,30 +244,30 @@ public class Player implements Character
 	 */
     public void goRoom(String direction)
     {
-        Room nextRoom = getCurrentRoom().getExit(direction);
+        Room nextRoom = getCurrentRoom().getExit(direction);//指向当前房间的出口
 
-        if (nextRoom == null)
+        if (nextRoom == null)//如果下一个房间为空
         {
-            AGame._out.println(AGame._messages.getString("door"));
+            AGame._out.println(AGame._messages.getString("door"));//输出下一个门不存在
         }
         else{
             setCurrentRoom(nextRoom);
 			_lastdirection=direction;
             look();
-
+            //如果得到的当前房间的描述符合TProom
 			if(Objects.equals(getCurrentRoom().getDescription(), "TProom and you will tp to a random room")){
 
 				String destination = null;
 				Random ran1=new Random();
 				int count=ran1.nextInt(4);
 				switch(count){
-					case 0:destination="east";break;
-					case 1:destination="west";break;
-					case 2:destination="north";break;
-					case 3:destination="south";break;
+					case 0:destination="east";break;//0的话反向是东
+					case 1:destination="west";break;//1的话反向是西
+					case 2:destination="north";break;//2的话是北
+					case 3:destination="south";break;//3的话是南
 				}
-				Room TPRoom = getCurrentRoom().getExit(destination);
-				setCurrentRoom(TPRoom);
+				Room TPRoom = getCurrentRoom().getExit(destination);//TProom指向的是destination
+				setCurrentRoom(TPRoom);//设置的房间是TProom
 				_lastdirection=null;
 				look();
 
@@ -281,7 +281,7 @@ public class Player implements Character
      */
 	public void setTotalWeight(int totalWeight)
 	{
-		this._totalWeight = totalWeight;
+		this._totalWeight = totalWeight;//转递totalWeight变量
 	}
 
 	/**
@@ -289,7 +289,7 @@ public class Player implements Character
 	 */
 	public int getTotalWeight()
 	{
-		return this._totalWeight;
+		return this._totalWeight;//返回totalWeight
 	}
 	
 	/**
@@ -297,6 +297,6 @@ public class Player implements Character
 	 */
 	public int getMaxWeight()
 	{
-		return _MAX_WEIGHT;
+		return _MAX_WEIGHT;//返回最大尺寸
 	}
 }

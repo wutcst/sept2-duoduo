@@ -15,7 +15,7 @@ import java.util.List;
  * @author duoduo
  *
  */
-public interface Character
+public interface Character//定义接口
 {
 	
 	public void setName(String name);  // 设置玩家名称
