@@ -3,7 +3,9 @@ package ZuulCommands;
 import Commands.ACommand;
 import Character.Player;
 import Game.AGame;
-
+/**
+* 此类是back命令的实现类
+*/
 public class BackCommand extends ACommand{
     public BackCommand(String firstWord, String secondWord, String thirdWord)
     {
