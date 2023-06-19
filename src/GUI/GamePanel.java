@@ -129,23 +129,23 @@ public class GamePanel extends JPanel
 		
 		if (checkNorth != null)
 		{
-			loader.loadImage("porteNorth.jpg");
+			loader.loadImage("porteNorth.png");
 			g2.drawImage(loader.getImage(), (416 / 2) - 23, 0, 45, 60, null);
 		}
 		if (checkSouth != null)
 		{
 
-			loader.loadImage("porteSouth.jpg");
+			loader.loadImage("porteSouth.png");
 			g2.drawImage(loader.getImage(),(416 / 2) - 23, (572 - 60), 45, 60, null);
 		}
 		if (checkEast != null)
 		{
-			loader.loadImage("porteEast.jpg");
+			loader.loadImage("porteEast.png");
 			g2.drawImage(loader.getImage(),(416 - 60) ,(572 / 2) - 23, 60, 45, null);
 		}
 		if (checkWest != null)
 		{
-			loader.loadImage("porteWest.jpg");
+			loader.loadImage("porteWest.png");
 			g2.drawImage(loader.getImage(), 0, (572 / 2) - 23, 60, 45, null);
 		}
 		
